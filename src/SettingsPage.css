@@ -1,0 +1,14 @@
+.settings-page .option-menu button {
+  background-color: #546355;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 226px;
+  margin: 15px 5px;
+  padding: 14px;
+}
+
+.settings-page .option-menu button:hover {
+  background-color: #46a049;
+}
