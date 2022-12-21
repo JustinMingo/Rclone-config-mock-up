@@ -3,6 +3,7 @@ import "./SettingsPage.css";
 import CurrentRemotes from "./CurrentRemotes"; // Import the styled CurrentRemotes component
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import NewRemoteOptions from "./NewRemoteOptions";
 
 const options = [
   "New remote", // I CHANGED THE ORDER HERE!!
