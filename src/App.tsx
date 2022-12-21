@@ -25,15 +25,18 @@ function SettingsPage() {
     <div className="settings-page">
       <h1 style={{ fontFamily: "Arial" }}>Configuration Rclone</h1>
       <div
-        style={{ fontFamily: "Arial", display: "block", marginBottom: "10px" }}
+        style={{ fontFamily: "Arial", display: "block", marginBottom: "20px" }}
       >
         Current remotes:
       </div>
       <CurrentRemotes remotes={remotes} />
       {selectedOption ? (
         <div>
-          <h2 style={{ fontFamily: "Arial" }}>{selectedOption}</h2>
+          <h2 style={{ fontFamily: "Arial", marginBottom: "40px" }}>
+            {selectedOption}
+          </h2>
           <button onClick={() => setSelectedOption(null)}>Back to menu</button>
+          <button>Next</button>
         </div>
       ) : (
         <div className="option-menu">
