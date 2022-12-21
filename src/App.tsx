@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import "./SettingsPage.css";
 import CurrentRemotes from "./CurrentRemotes"; // Import the styled CurrentRemotes component
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
 const options = [
+  "New remote", // I CHANGED THE ORDER HERE!!
   "Edit existing remote",
-  "New remote",
   "Delete remote",
   "Rename remote",
   "Copy remote",
-  "Set configuration password",
-  "Quit configuration"
+  "Set configuration password"
 ];
 
 const remotes = [
@@ -18,7 +19,20 @@ const remotes = [
   { name: "test3", type: "s3" }
 ];
 
-function SettingsPage() {
+export default function BasicTextField() {
+  return (
+    <div>
+      <TextField
+        id="outlined-helperText"
+        label="Remote name"
+        defaultValue="Test"
+        helperText="Enter a valid name for the new remote"
+      />
+    </div>
+  );
+}
+
+function SettingsPage(): JSX.Element {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   return (
@@ -32,8 +46,17 @@ function SettingsPage() {
       <CurrentRemotes remotes={remotes} />
       {selectedOption ? (
         <div>
-          <h2 style={{ fontFamily: "Arial", marginBottom: "40px" }}>
+          <h2
+            style={{
+              fontFamily: "Arial",
+              marginTop: "40px",
+              marginBottom: "40px"
+            }}
+          >
             {selectedOption}
+            <div style={{ marginTop: "20px" }}>
+              <BasicTextField />
+            </div>
           </h2>
           <button onClick={() => setSelectedOption(null)}>Back to menu</button>
           <button>Next</button>
