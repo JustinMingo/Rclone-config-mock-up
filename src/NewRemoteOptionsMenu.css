@@ -1,0 +1,23 @@
+.NewRemoteOptionsMenu {
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+  column-rule: 1px solid black;
+}
+
+.NewRemoteOptionsMenu button {
+  /* add some styling for the buttons */
+  background-color: #546355;
+  color: white;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+  padding: 12px;
+  margin: 2px 14px;
+  text-align: left;
+}
+
+.NewRemoteOptionsMenu button:hover {
+  background-color: #46a049;
+}

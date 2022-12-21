@@ -4,6 +4,8 @@ import CurrentRemotes from "./CurrentRemotes"; // Import the styled CurrentRemot
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import NewRemoteOptions from "./NewRemoteOptions";
+import "./NewRemoteOptionsMenu.css";
+import BasicTextField from "./BasicTextField";
 
 const options = [
   "New remote", // I CHANGED THE ORDER HERE!!
@@ -19,19 +21,6 @@ const remotes = [
   { name: "test2", type: "s3" },
   { name: "test3", type: "s3" }
 ];
-
-export default function BasicTextField() {
-  return (
-    <div>
-      <TextField
-        id="outlined-helperText"
-        label="Remote name"
-        defaultValue="Test"
-        helperText="Enter a valid name for the new remote"
-      />
-    </div>
-  );
-}
 
 function SettingsPage(): JSX.Element {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -57,6 +46,16 @@ function SettingsPage(): JSX.Element {
             {selectedOption}
             <div style={{ marginTop: "20px" }}>
               <BasicTextField />
+              <select
+                className="NewRemoteOptionsMenu"
+                style={{ marginTop: "40px" }}
+              >
+                {NewRemoteOptions.map((option, index) => (
+                  <option key={index} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
             </div>
           </h2>
           <button onClick={() => setSelectedOption(null)}>Back to menu</button>
