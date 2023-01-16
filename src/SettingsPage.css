@@ -1,3 +1,32 @@
+/* Import Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+/* H1 style */
+h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* H2 style */
+h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Body style */
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 .settings-page .option-menu button {
   background-color: #546355;
   color: white;
