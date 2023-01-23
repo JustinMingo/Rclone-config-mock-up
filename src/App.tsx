@@ -6,14 +6,12 @@ import TextField from "@mui/material/TextField";
 import NewRemoteOptions from "./NewRemoteOptions";
 import "./NewRemoteOptionsMenu.css";
 import BasicTextField from "./BasicTextField";
+import NewRemote from "./NewRemote";
+import EditRemote from "./EditRemote";
 
 const options = [
   "New remote", // I CHANGED THE ORDER HERE!!
-  "Edit existing remote",
-  "Delete remote",
-  "Rename remote",
-  "Copy remote",
-  "Set configuration password"
+  "Edit existing remote"
 ];
 
 const remotes = [
@@ -36,30 +34,19 @@ function SettingsPage(): JSX.Element {
       <CurrentRemotes remotes={remotes} />
       {selectedOption ? (
         <div>
-          <h2
-            style={{
-              fontFamily: "Arial",
-              marginTop: "40px",
-              marginBottom: "40px"
-            }}
-          >
-            {selectedOption}
-            <div style={{ marginTop: "20px" }}>
-              <BasicTextField />
-              <select
-                className="NewRemoteOptionsMenu"
-                style={{ marginTop: "40px" }}
-              >
-                {NewRemoteOptions.map((option, index) => (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </h2>
-          <button onClick={() => setSelectedOption(null)}>Back to menu</button>
-          <button>Next</button>
+          <React.Fragment>
+            {selectedOption === "New remote" ? (
+              <NewRemote />
+            ) : selectedOption === "Edit existing remote" ? (
+              <EditRemote />
+            ) : (
+              <div> No option selected </div>
+            )}
+            <button onClick={() => setSelectedOption(null)}>
+              Back to menu
+            </button>
+            <button>Next</button>
+          </React.Fragment>
         </div>
       ) : (
         <div className="option-menu">
